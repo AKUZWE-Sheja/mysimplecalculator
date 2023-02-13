@@ -1,22 +1,25 @@
-const express = require('express');
-const app = express();
-const port = 3000;
-app.listen(port, () => {
-  console.log(`Calculator app listening at http://localhost:${port}`);
-});
-app.get('/addition', (req, res) => {
-  const numbers = req.query.numbers;
-  let sum = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    sum += parseInt(numbers[i]);
-  }
-  res.send({ sum });
-});
-app.get('/multiplication', (req, res) => {
-  const numbers = req.query.numbers;
-  let product = 1;
-  for (let i = 0; i < numbers.length; i++) {
-    product *= parseInt(numbers[i]);
-  }
-  res.send({ product });
-});
+function addNumbers(){
+    const numbers=[12,2,83,4,35,6,43,9];
+    let sum=0;
+    for(let i=0;i<numbers.length;i++){
+        sum += numbers[i];
+      }
+      return sum;
+    }
+    console.log(addNumbers());
+     
+    ​
+    function multiplyNumbers(){
+        const arrayNumbers=[12,2,83,4,35,6,43,9];
+        let product=1;
+        for(let i=0;i<arrayNumbers.length;i++){
+        product *=arrayNumbers[i];
+        }
+        return product;
+      }
+      console.log(multiplyNumbers());
+    ​
+      module.exports={
+        addNumbers,
+        multiplyNumbers
+      }
